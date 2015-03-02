@@ -1,0 +1,17 @@
+#!/usr/bin/expect -f
+#trap sigwinch spawned
+trap {
+    set rows [stty rows]
+    set cols [stty columns]
+    stty rows $rows columns $cols < $spawn_out(slave,name)
+} WINCH
+
+set timeout -1
+send -- "PASSCODE prefix: ***\n"
+spawn ssh **@10.210.182.212
+expect -exact "password:"
+send -- "***"
+expect -exact "Enter PASSCODE:"
+send -- "***"
+expect -re "$" 
+interact

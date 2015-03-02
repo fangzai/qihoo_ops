@@ -1,0 +1,24 @@
+关于第八题解答说明
+文件夹包含两个perl脚本文，一个文件夹和一张测试图片
+该题基于dancer的框架是直接用dancer -a myApp创建的，然后直接生成myApp文件夹，也就是本题的答案。
+
+先解释一下另外两个perl脚本文件
+
+dancerTest.pl 用于测试本机的dancer框架是可以使用的
+
+getFile.pl	  用于测试获取当前目录文件名和时间的的脚本文件，直接运行即可（在ubuntu14.04上测试通过）
+
+下面说明一下myApp该文件夹内工程的工作过程
+直接执行 myApp/bin/app.pl
+等待显示  Entering the development dance floor ...后
+在浏览器中输入http://localhost:3000/myWeb/param  即可得到想要的结果
+本机测试结果显示在“测试图片.jpg”中
+
+代码结构
+myApp/bin/app.pl 里主要包含两个函数，一个是获取文件信息hash的子函数，一个是调用dancerweb框架的函数（也就是展示函数）
+
+展示过程需要修改默认template
+myApp/views/layouts/main.tt是模板文件，可以不必修改，当然本项目做了一下更改
+myApp/views/myWeb.tt 是本项目的展示文件，需要设定表格或者其他内容（里面用到部分js代码）
+
+

@@ -3,6 +3,7 @@
 <html>
      <head><% page_title %></head>
      <body>
+	 <center>
      <div id= "header" >
      ---------------------------------------------------------------------
 	 这是模板，你可以随意设置你喜欢的内容。。。。。。
@@ -12,6 +13,6 @@
      <div id= "content" >
      <% content %>
      </div>
- 
+     </center>
      </body>
 </html>

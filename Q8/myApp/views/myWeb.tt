@@ -2,7 +2,9 @@
  <head>
  </head>
  <body>
+	 <center>
      <h1>Hello <% params.name %></h1>
+	 
      <p>Your lucky number is <% number %></p>
 	 <h4>当前目录下文件信息：文件名和创建时间</h4>
 	 <script>
@@ -32,7 +34,7 @@
                 write("<td>");
 				if(0==i)
 				{
-					write("FileName");    //第一行 输出title
+					write("FileTime");    //第一行 输出title
 				}
 				else
 				{
@@ -47,12 +49,12 @@
 		}
 	 </script>
 
-</table>
-
+	 
      <p>======================================后面都是没有用的=======================================</p>
      <p>You are using <% request.user_agent %></p>
      <% IF session.user %>
          <p>You're logged in as <% session.user %></p>
      <% END %>
+	</center>
  </body>
 </html>

@@ -1,0 +1,4 @@
+关于第四题解答说明
+本文件夹包含两个文件
+	log_cutting.sh完成日志切割功能
+	log_cutting_instruction文件是对log_cutting.sh脚本使用和分析的说明。

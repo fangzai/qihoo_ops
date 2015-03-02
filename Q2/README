@@ -1,7 +1,9 @@
 关于第二题解答说明
 
-ifconfig_reg.sh 用的是shell语言实现的，本身这里使用shell不支持hash
-				所以就用关联数组实现，里面有一个需要注意的地方，就是本地测试是中文的ubuntu
-				故网卡查询里面用到的中文，如果是英文系统测试请注意修改。
-ifconfig_reg.py 用的是python语言实现的，ubuntu14.04下测试通过，python支持hash，直接返回hash
-				不过python中如果没有安装中文编码支持的话，有可能对中文注释报错，这一点必须注意。
+ifconfig_reg.sh 
+	用的是shell语言实现的，本身这里使用shell不支持hash				
+	所以就用关联数组实现，里面有一个需要注意的地方，就是本地测试是中文的ubuntu			
+	故网卡查询里面用到的中文，如果是英文系统测试请注意修改。
+ifconfig_reg.py 
+	用的是python语言实现的，ubuntu14.04下测试通过，python支持hash，直接返回hash
+	不过python中如果没有安装中文编码支持的话，有可能对中文注释报错，这一点必须注意。

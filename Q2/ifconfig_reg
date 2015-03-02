@@ -1,0 +1,28 @@
+#!/bin/bash
+
+declare -A myEth  ##定义关联数组
+num_of_eth=`ifconfig | grep -c "eth"`  # 获取关联数组的长度
+hash()
+{
+	
+	
+	i=0 
+	#echo $num_of_eth  表示这里只有一个网卡
+	index=(`echo `)
+	while [ $i -lt $num_of_eth ]
+	do
+		key="eth"$i
+		#echo $key
+		ip=`ifconfig $key | grep "inet 地址" | awk -F: '{print $2}' | awk '{print $1}'`
+		
+		#echo $ip
+		myEth[$key]=$ip
+		echo -n $key:
+		echo ${myEth[$key]}
+	let "i+=1"
+	done
+}
+hash
+#echo ${myEth["eth0"]}
+
+exit 0

@@ -1,0 +1,58 @@
+<html>
+ <head>
+ </head>
+ <body>
+     <h1>Hello <% params.name %></h1>
+     <p>Your lucky number is <% number %></p>
+	 <h4>当前目录下文件信息：文件名和创建时间</h4>
+	 <script>
+	 //  javascript代码
+	 with(document)
+	 {
+			var fileName="<% mykey %>".split(',');  //将传入的mykey参数split开，放到数组里面
+			var fileTime="<% myvalue %>".split(',');//将传入的myvalue参数split开，放到数组里面
+			var colNum=<% number %>+1;              //会多一项title
+	        write("<table border='1' height='400px' width='400px'><tr>");
+			//定义cell的size
+			//write("<tr>");
+			for(var i=0;i<colNum;i++)               //动态产生colNum×2的table
+			{
+				write("<tr>");
+				write("<td>");
+				//write("<% mykey %>");
+				if(0==i)
+				{
+					write("FileName");    //第一行 输出title
+				}
+				else
+				{
+					write(fileName[i-1]); //输出文件名
+				}
+				write("</td>");
+                write("<td>");
+				if(0==i)
+				{
+					write("FileName");    //第一行 输出title
+				}
+				else
+				{
+					write(fileTime[i-1]); //输出文件时间
+				}
+				
+				write("</td>");
+				write("</tr>");
+			}
+			//write("</tr>");
+			write("</table>")
+		}
+	 </script>
+
+</table>
+
+     <p>======================================后面都是没有用的=======================================</p>
+     <p>You are using <% request.user_agent %></p>
+     <% IF session.user %>
+         <p>You're logged in as <% session.user %></p>
+     <% END %>
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+	<script>
+	function createTable()
+	{
+		with(document)
+		{
+			write("<table border='1' height='400px' width='400px'><tr>");
+			//write("<tr>");
+			for(var i=0;i<10;i++)
+			{
+				write("<tr>");
+				write("<td>");
+				write(i);
+				write("</td>");
+				write("</tr>");
+			}
+			//write("</tr>");
+			write("</table>")
+		}
+	}
+	</script>
+	</head>
+ 	<body onload="createTable()">
+
+ 	</body>
+</html>
